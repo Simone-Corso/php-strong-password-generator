@@ -1,3 +1,26 @@
+<!--qua inizierò a inserire la logica per generare la password!-->
+<?php
+session_start();
+include 'functions.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (isset($_GET["passwordLength"])) {
+        $_SESSION["passwordLength"] = (int)$_GET["passwordLength"];
+        $password = generateRandomPassword($_SESSION["passwordLength"]);
+
+        $_SESSION["generatedPassword"] = $password;
+
+        header("Location: show-password.php");
+
+    } else {
+        header("Location: index.php");
+        
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -19,34 +42,6 @@
         value="<?php echo isset($_SESSION['passwordLength']) ? $_SESSION['passwordLength'] : ''; ?>">
     <button type="subtim">Genera La Tua Password</button>
 </form>
-
-<!--qua inizierò a inserire la logica per generare la password!-->
-    <?php
-
-    session_start();
-
-    include 'functions.php';
-
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
-        if (isset($_GET["passwordLength"])) {
-            $_SESSION["passwordLength"] = (int)$_GET["passwordLength"];
-
-            $password = generateRandomPassword($_SESSION["passwordLength"]);
-
-            //stampo la password generata
-
-            echo "<p> La tua password generata è: $password<p>";
-        },
-
-        header("Location: showpassword.php");
-        } else {
-            // quando non fornisce la password dovrà tornare alla pagina iniziale
-    header("Location: index.php");
-
-}
-?>
-    
 
 </body>
 </html>
