@@ -26,6 +26,12 @@
 
         if (isset($_GET["passwordLength"])) {
             $_SESSION["passwordLength"] = (int)$_GET["passwordLength"];
+
+            $password = generateRandomPassword($_SESSION["passwordLength"]);
+
+            //stampo la password generata
+
+            echo "<p> La tua password generata è: $password<p>";
     
             header("Location: index.php");
             exit();
