@@ -9,6 +9,10 @@
 <body>
 
 <h1>Generatore Di Password</h1>
+
+<form action="index.php" method="get">
+    
+</form>
     
 </body>
 </html>
