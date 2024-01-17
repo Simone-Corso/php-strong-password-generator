@@ -12,13 +12,28 @@
 
 <form action="index.php" method="get">
     <label for="passwordLength">La Lunghezza Della Password Che Desideri : </label>
-    <input type="text" name="passwordLength" id="passwordLength" min="1" required
+    <input type="number" name="passwordLength" id="passwordLength" min="1" required
         value="<?php echo isset($_SESSION['passwordLength']) ? $_SESSION['passwordLength'] : ''; ?>">
     <button type="subtim">Genera La Tua Password</button>
 </form>
 
 <!--qua inizierò a inserire la logica per generare la password!-->
+    <?php
+
+    session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
+        if (isset($_GET["passwordLength"])) {
+            $_SESSION["passwordLength"] = (int)$_GET["passwordLength"];
     
+            header("Location: index.php");
+            exit();
+        }
+    }
+
+
+    ?>
 
 </body>
 </html>
