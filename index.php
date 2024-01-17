@@ -11,7 +11,9 @@
 <h1>Generatore Di Password</h1>
 
 <form action="index.php" method="get">
-    
+    <label for="passwordLength">La Lunghezza Della Password è : </label>
+    <input type="number" name="passwordLength" id="passwordLength">
+    <button type="subtim">Genera La Tua Password</button>
 </form>
     
 </body>
