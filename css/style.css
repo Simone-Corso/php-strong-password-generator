@@ -1,0 +1,39 @@
+body{
+    background-color: #03162F;
+}
+
+h1{
+    color: #808B99;
+}
+
+h2{
+    color: white;
+}
+
+form{
+    color: black;
+    
+}
+
+.container-password{
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.btn-primary{
+    background: #0D6EFD;
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    height: 34px;
+    margin-left: 3rem;
+    color: white;
+}

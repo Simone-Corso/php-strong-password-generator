@@ -30,15 +30,25 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     <title>Generatore Di Password</title>
 </head>
 <body>
+<div class="container-title text-center mt-5">
+<h1>Strong Password Generator
 
-<h1>Generatore Di Password</h1>
+</h1>
 
-<form action="index.php" method="get">
+<h2>
+Genera una password sicura
+</h2>
+</div>
+<main>
+    <div class="container-password">
+<form action="index.php" method="get" class="form d-flex justify-content-center align-items-center mt-5">
     <label for="passwordLength">La Lunghezza Della Password Che Desideri : </label>
     <input type="number" name="passwordLength" id="passwordLength" min="1" required
         value="<?php echo isset($_SESSION['passwordLength']) ? $_SESSION['passwordLength'] : ''; ?>">
-    <button type="subtim">Genera La Tua Password</button>
+    <button type="subtim" class="btn-primary">Invia</button>
 </form>
+</div>
+</main>
 
 </body>
 </html>
