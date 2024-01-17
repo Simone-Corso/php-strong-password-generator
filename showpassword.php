@@ -10,6 +10,6 @@ if (isset($_SESSION["generatedPassword"])) {
     echo "<p>La tua password generata è: $generatedPassword</p>";
 } else {
     // Se non presenta la password ritorna alla pagina principale
-    header("Location: index.php");
+    header("Location: ./index.php");
 }
 ?>

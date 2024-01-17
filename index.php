@@ -10,11 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         $_SESSION["generatedPassword"] = $password;
 
-        header("Location: show-password.php");
+        header("Location: ./showpassword.php");
 
-    } else {
-        header("Location: index.php");
-        
     }
 }
 ?>
