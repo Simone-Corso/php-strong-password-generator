@@ -37,10 +37,16 @@
             //stampo la password generata
 
             echo "<p> La tua password generata è: $password<p>";
-        }
-    };
+        },
 
-    ?>
+        header("Location: showpassword.php");
+        } else {
+            // quando non fornisce la password dovrà tornare alla pagina iniziale
+    header("Location: index.php");
+
+}
+?>
+    
 
 </body>
 </html>
